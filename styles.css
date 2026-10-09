@@ -196,7 +196,14 @@ footer a { color: var(--ink-2); border-bottom-color: rgba(201,196,242,.35); }
 .ncol.here .hd { background: #2a74dd; }
 .ncol:hover .hd, .ncol:focus-visible .hd { background: #3384f0; }
 .ncol .dest { font-weight: 700; font-size: 19px; line-height: 1.15; }
-@media (max-width: 760px) { .strip { grid-template-columns: repeat(6, 150px); } .ncol { height: 64px; } .ncol .dest { font-size: 18px; } }
+@media (max-width: 760px) {
+  /* 9 Oct: six boxes in one row meant scrolling sideways to find a tab on a phone; two rows of three instead, all six in view */
+  .strip { grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; overflow-x: visible; }
+  .ncol { height: auto; min-height: 52px; }
+  .ncol .hd { padding: 7px 7px; }
+  .ncol .dest { font-size: 15px; line-height: 1.1; }
+}
+@media (max-width: 380px) { .ncol .dest { font-size: 12px; } .ncol .hd { padding: 7px 5px; } }
 
 /* 9 Oct: long page titles (COLLABORATORS) overflowed a phone screen; scale the tiles down there */
 @media (max-width: 760px) { .solari.title .row { font-size: clamp(24px, 8vw, 44px); } }

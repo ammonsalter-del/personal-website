@@ -14,10 +14,9 @@
     if (actx || !AC || !window.FLAP_SOUNDS) return;
     actx = new AC();
     window.FLAP_SOUNDS.forEach(function (u, i) {
-      var bin = atob(u.split(',')[1]), buf = new Uint8Array(bin.length);
-      for (var j = 0; j < bin.length; j++) buf[j] = bin.charCodeAt(j);
-      new Promise(function (res, rej) { var p = actx.decodeAudioData(buf.buffer, res, rej); if (p && p.then) p.then(res, rej); })
-        .then(function (b) { bufs[i] = b; }, function () {});
+      fetch(u).then(function (r) { return r.arrayBuffer(); }).then(function (ab) {
+        return new Promise(function (res, rej) { var p = actx.decodeAudioData(ab, res, rej); if (p && p.then) p.then(res, rej); });
+      }).then(function (b) { bufs[i] = b; }, function () {});
     });
   }
   function playFlap(len) {
