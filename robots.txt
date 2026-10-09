@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ammonsalter-del.github.io/personal-website/sitemap.xml
+Sitemap: https://ammonsalter.org/sitemap.xml
