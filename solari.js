@@ -28,9 +28,25 @@
     s.buffer = b; s.connect(g); g.connect(actx.destination); s.start(t0); s.stop(t0 + len + 0.6);
     cur = g;
   }
+  function replayVisibleBoards() {
+    var any = false;
+    document.querySelectorAll('.solari').forEach(function (b) {
+      var r = b.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < (window.innerHeight || 0) && b._cells) { b._done = false; runBoard(b); any = true; }
+    });
+    if (!any) playFlap(0.9);
+  }
   function setSound(on) {
     soundOn = on;
-    if (on) { initAudio(); if (actx && actx.state === 'suspended') actx.resume(); setTimeout(function () { playFlap(0.9); }, 450); }
+    if (on) {
+      initAudio(); if (actx && actx.state === 'suspended') actx.resume();
+      // wait for the first clip to arrive, then turn the boards on screen again so there is something to hear
+      var tries = 0;
+      (function ready() {
+        if (bufs.length && bufs[0]) { replayVisibleBoards(); return; }
+        if (++tries < 40) setTimeout(ready, 100);
+      })();
+    }
     try { sessionStorage.setItem('solari-sound', on ? '1' : '0'); } catch (e) {}
     document.querySelectorAll('[data-sound]').forEach(function (b) { b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.textContent = on ? 'Sound on' : 'Sound off'; });
   }
