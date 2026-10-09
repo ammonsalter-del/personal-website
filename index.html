@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-strand="research">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ammon Salter</title>
+<meta name="description" content="Ammon Salter, Professor of Technology and Innovation Management at Warwick Business School: research on innovation, teaching, free open-source simulation games, and academic humour comics.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ammon Salter">
+<meta property="og:title" content="Ammon Salter">
+<meta property="og:description" content="Ammon Salter, Professor of Technology and Innovation Management at Warwick Business School: research on innovation, teaching, free open-source simulation games, and academic humour comics.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="name" href="index.html">Ammon Salter</a>
+  <div class="operator">ammon <span>salter</span></div>
+</header>
+<nav class="wrap deps" aria-label="Pages"><div class="strip">
+<a class="ncol" href="research.html">
+  <div class="hd"><div class="dest">Research</div></div>
+</a>
+<a class="ncol" href="teaching.html">
+  <div class="hd"><div class="dest">Teaching</div></div>
+</a>
+<a class="ncol" href="collaborators.html">
+  <div class="hd"><div class="dest">Collaborators</div></div>
+</a>
+<a class="ncol" href="cv.html">
+  <div class="hd"><div class="dest">Career</div></div>
+</a>
+<a class="ncol" href="games.html">
+  <div class="hd"><div class="dest">The I&amp;E Playbook</div></div>
+</a>
+<a class="ncol" href="cartoons.html">
+  <div class="hd"><div class="dest">Cartoons</div></div>
+</a>
+</div></nav>
+<section class="wrap hero" aria-label="Split-flap board">
+  <div class="boardwrap"><canvas id="wall" role="img" aria-label="A split-flap board turning through papers, books, a cartoon and the games"></canvas></div>
+  <p id="caption" aria-live="polite">&nbsp;</p>
+  <div class="controls">
+    <button id="prev" type="button" hidden>Previous</button>
+    <button id="play" type="button">Pause</button>
+    <button id="next" type="button" hidden>Next</button>
+    <button id="replay" type="button" hidden>Replay</button>
+    <button type="button" data-sound aria-pressed="false">Sound off</button>
+  </div>
+</section><section class="wrap intro">
+  <div>
+    <p>I am a Professor at Warwick Business School (WBS) at the University of Warwick. Although a Canadian, I have spent my career in Europe, working at four different UK universities. I started at SPRU at the University of Sussex as a doctoral student and then a research fellow, where I had a wonderful cohort of PhDs, mentors and colleagues. In 2003, I moved to Imperial College London. I transferred to a faculty post as a senior lecturer in 2005. I was promoted to Reader in 2008 and then Professor in 2010. In 2013, I moved to the University of Bath, where I was a group head and then REF Director. In 2023, I joined WBS.</p>
+    <p>My research focuses on open and distributed models of innovation, innovation management, R&amp;D project selection, AI new ventures, and university&ndash;industry collaboration. I try to engage with policy and practice through collaborative projects with industrial and government partners.</p>
+  </div>
+  <div>
+    <p>I have published in a wide range of journals, such as <em>Strategic Management Journal</em>, <em>Organization Science</em>, <em>Academy of Management Review</em>, <em>Academy of Management Journal</em>, <em>Administrative Science Quarterly</em>, <em>Research Policy</em>, <em>Industrial and Corporate Change</em>, <em>Harvard Business Review</em> and <em>California Management Review</em>. I have recently stood down after six years as an editor at <em>Research Policy</em>.</p>
+    <p>Over the past year I have been developing open-source, free educational games and simulations for students and lifelong learners in entrepreneurship and innovation. They are designed for deep play, allowing students to explore a rich possibility space and experiment with options, and to be played many times, as they are challenging, with moments of fun and levity mixed in. I have a sideline creating academic humour comics, which I appreciate is a bit of an oxymoron.</p>
+    <p class="profiles"><a href="https://www.wbs.ac.uk/about/person/ammon-salter/">Warwick Business School</a><a href="https://www.scopus.com/authid/detail.uri?authorId=7005775452">Scopus</a><a href="https://www.webofscience.com/wos/author/record/A-9217-2010">Web of Science</a><a href="https://scholar.google.com/citations?user=g4LAp4sAAAAJ&amp;hl=en">Google Scholar</a><a href="https://www.linkedin.com/in/ammon-salter-63b3284a/">LinkedIn</a><a href="https://ieplaybook.substack.com/">Substack</a></p>
+  </div>
+</section><section class="wrap subscribe" aria-label="The Innovation and Entrepreneurship Playbook on Substack">
+  <img class="posters" src="images/playbook-posters.jpg" alt="Three posters on a wall: The Disruptor, The Slingshot and Build, Bin, Boost" loading="lazy">
+  <div class="subtext">
+    <h2>The Innovation and Entrepreneurship Playbook</h2>
+    <p>Follow the development and use of the games on Substack: updates, features, extensions, teaching ideas and user stories from the games, for educators and anyone curious. Free.</p>
+    <p class="links"><a class="btn" href="https://ieplaybook.substack.com/subscribe">Subscribe, free</a><a href="https://ieplaybook.substack.com/">Read it on Substack</a></p>
+  </div>
+</section>
+<script>
+window.PICTURE_FRAMES = [
+  { id: 'name', caption: '', text: { kind: 'name', big: 'AMMON SALTER', lines: ['Professor of Technology and Innovation Management', 'Warwick Business School, University of Warwick'], accent: '#6fe8f3' } },
+  { id: 'amj2017', img: 'images/paper-amj2017.jpg', caption: 'Evaluating novelty: the role of panels in the selection of R&D projects. Academy of Management Journal, 2017' },
+  { id: 'asq2020', img: 'images/paper-asq2020.jpg', caption: 'Dual networking: how collaborators network in their quest for innovation. Administrative Science Quarterly, 2020' },
+  { id: 'amr2013', img: 'images/paper-amr2013.jpg', caption: 'Cui bono? The selective revealing of knowledge and its implications for innovative activity. Academy of Management Review, 2013' },
+  { id: 'orgsci2014', img: 'images/paper-orgsci2014.jpg', caption: 'Going underground: bootlegging and individual innovative performance. Organization Science, 2014' },
+  { id: 'rp2017', img: 'images/paper-rp2017-marriage.jpg', caption: 'Making a marriage of materials: gatekeepers and shepherds in the absorption of external knowledge. Research Policy, 2017' },
+  { id: 'cmr2014', img: 'images/paper-cmr2014.jpg', caption: 'Coping with open innovation: responding to the challenges of external engagement in R&D. California Management Review, 2014' },
+  { id: 'rp2015', img: 'images/paper-rp2015-triangle.jpg', caption: 'The fateful triangle: complementarities between product, process and organizational innovation. Research Policy, 2015' },
+  { id: 'bjm2022', img: 'images/paper-bjm2022.jpg', caption: 'Are academics willing to forgo citations to publish in high-status journals? British Journal of Management, 2022' },
+  { id: 'slingshot', img: 'images/frame-slingshot.jpg', caption: 'The Slingshot, an AI startup simulation, 2026' },
+  { id: 'disruptor', img: 'images/frame-disruptor.jpg', caption: 'The Disruptor, corporate innovation at V\u00e9lox Dynamics, 2026' },
+  { id: 'bbb', img: 'images/frame-bbb.jpg', caption: 'Build, Bin, Boost, R&D portfolio management at ShieldTech, 2026' },
+  { id: 'playbook', img: 'images/frame-playbook.jpg', caption: 'The I&E Playbook: three simulation games, free and open source' },
+  { id: 'asl', img: 'images/frame-asl.jpg', caption: 'Appropriation Strategy Lab, how firms protect and profit from innovation, 2025' },
+  { id: 'boom', img: 'images/frame-boom.jpg', caption: 'Boom or Bust, an innovation prediction exercise, 2026' },
+  { id: 'botdeck', img: 'images/frame-botdeck.jpg', caption: 'The Bot Deck, a set of cards on generative AI at work, 2026' },
+  { id: 'oi', img: 'images/frame-oi.jpg', caption: 'Open for Innovation, a trading and negotiation board game of open innovation, 2026' }
+];
+</script><footer class="wrap">
+  <p>Warwick Business School, University of Warwick, Coventry CV4 7AL. <a href="https://www.wbs.ac.uk/about/person/ammon-salter/">Profile at Warwick Business School</a>.</p>
+  <p>The Innovation and Entrepreneurship Playbook is on <a href="https://ieplaybook.substack.com/">Substack</a>. The games and their materials are released under CC BY-NC-SA 4.0. Board sound by <a href="https://freesound.org/s/174056/">matucha</a>, CC BY-NC 4.0.</p>
+</footer>
+<script src="sounds.js"></script>
+<script src="solari.js"></script>
+</body>
+</html>

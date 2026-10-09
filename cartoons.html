@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-strand="cartoons">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartoons, Ammon Salter</title>
+<meta name="description" content="Academic humour comics by Ammon Salter.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ammon Salter">
+<meta property="og:title" content="Cartoons, Ammon Salter">
+<meta property="og:description" content="Academic humour comics by Ammon Salter.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="name" href="index.html">Ammon Salter</a>
+  <div class="operator">ammon <span>salter</span></div>
+</header>
+<nav class="wrap deps" aria-label="Pages"><div class="strip">
+<a class="ncol" href="research.html">
+  <div class="hd"><div class="dest">Research</div></div>
+</a>
+<a class="ncol" href="teaching.html">
+  <div class="hd"><div class="dest">Teaching</div></div>
+</a>
+<a class="ncol" href="collaborators.html">
+  <div class="hd"><div class="dest">Collaborators</div></div>
+</a>
+<a class="ncol" href="cv.html">
+  <div class="hd"><div class="dest">Career</div></div>
+</a>
+<a class="ncol" href="games.html">
+  <div class="hd"><div class="dest">The I&amp;E Playbook</div></div>
+</a>
+<a class="ncol here" href="cartoons.html" aria-current="page">
+  <div class="hd"><div class="dest">Cartoons</div></div>
+</a>
+</div></nav>
+<section class="wrap head">
+  <h1 class="solari title" aria-label="CARTOONS"><div class="row" data-cells="8"><span>CARTOONS</span></div></h1>
+  <p class="lede">I have a sideline creating &lsquo;academic humour&rsquo; comics. Citations, reviewers, rankings, the REF, the press office, and the AI start-up that is not as valuable as he thinks it is. They are made with Gemini and ChatGPT, as I am terrible at drawing. All are based on original ideas. I have made around 50 comics so far, and plan to make more. I hope to publish them in a book at a later date. I have included a sample below.</p>
+</section>
+<main class="wrap">
+  <section class="hero viewer" aria-label="Cartoon viewer">
+    <div class="boardwrap"><canvas id="wall" role="img" aria-label="A split-flap board showing one cartoon at a time"></canvas></div>
+    <p id="caption" aria-live="polite">&nbsp;</p>
+    <div class="controls">
+      <button id="prev" type="button">Previous</button>
+      <button id="play" type="button" hidden>Pause</button>
+      <button id="next" type="button">Next</button>
+      <button id="replay" type="button" hidden>Replay</button>
+      <button type="button" data-sound aria-pressed="false">Sound off</button>
+    </div>
+    <div class="thumbs" aria-label="Choose a cartoon">
+<button type="button" data-frame="0" aria-current="true"><img src="images/thumb-dogs.jpg" alt="“I don’t think this is his best work.”"></button>
+<button type="button" data-frame="1" aria-current="false"><img src="images/thumb-causality.jpg" alt="Bob is taking claims of causality in his study too seriously"></button>
+<button type="button" data-frame="2" aria-current="false"><img src="images/thumb-moon.jpg" alt="“Perhaps this AI start-up is not as valuable as he thinks it is.”"></button>
+<button type="button" data-frame="3" aria-current="false"><img src="images/thumb-refman.jpg" alt="They say he was included in seven REF submissions"></button>
+<button type="button" data-frame="4" aria-current="false"><img src="images/thumb-aidetector.jpg" alt="I told you the AI detector would not work."></button>
+<button type="button" data-frame="5" aria-current="false"><img src="images/thumb-authentic.jpg" alt="“Yes, but is it an authentic assignment?”"></button>
+<button type="button" data-frame="6" aria-current="false"><img src="images/thumb-cows.jpg" alt="I think I liked yesterday’s pitch better"></button>
+<button type="button" data-frame="7" aria-current="false"><img src="images/thumb-grave.jpg" alt="At least, we won’t have to see any more class photos on LinkedIn."></button>
+<button type="button" data-frame="8" aria-current="false"><img src="images/thumb-readpapers.jpg" alt="It is so much easier now that we do not have to read the papers."></button>
+<button type="button" data-frame="9" aria-current="false"><img src="images/thumb-reviewerpool.jpg" alt="The Reviewer Pool: I wonder if the ice will hold."></button>
+<button type="button" data-frame="10" aria-current="false"><img src="images/thumb-morepapers.jpg" alt="I should have published more papers."></button>
+<button type="button" data-frame="11" aria-current="false"><img src="images/thumb-stealth.jpg" alt="I think this one is taking the stealth entry mode strategy too literally"></button>
+    </div>
+    <p class="boardnote">12 cartoons. The board turns to the next one on Next, a thumbnail, or the arrow keys.</p>
+  </section>
+</main>
+<script>
+window.BOARD_MANUAL = true; window.BOARD_SHAPE = { cols: 12, rows: 12 }; window.BOARD_MAXW = 640;
+window.PICTURE_FRAMES = [
+  { id: 'dogs', img: 'images/cartoon-dogs.jpg', caption: "“I don’t think this is his best work.”" },
+  { id: 'causality', img: 'images/cartoon-causality.jpg', caption: "Bob is taking claims of causality in his study too seriously" },
+  { id: 'moon', img: 'images/cartoon-moon.jpg', caption: "“Perhaps this AI start-up is not as valuable as he thinks it is.”" },
+  { id: 'refman', img: 'images/cartoon-refman.jpg', caption: "They say he was included in seven REF submissions" },
+  { id: 'aidetector', img: 'images/cartoon-aidetector.jpg', caption: "I told you the AI detector would not work." },
+  { id: 'authentic', img: 'images/cartoon-authentic.jpg', caption: "“Yes, but is it an authentic assignment?”" },
+  { id: 'cows', img: 'images/cartoon-cows.jpg', caption: "I think I liked yesterday’s pitch better" },
+  { id: 'grave', img: 'images/cartoon-grave.jpg', caption: "At least, we won’t have to see any more class photos on LinkedIn." },
+  { id: 'readpapers', img: 'images/cartoon-readpapers.jpg', caption: "It is so much easier now that we do not have to read the papers." },
+  { id: 'reviewerpool', img: 'images/cartoon-reviewerpool.jpg', caption: "The Reviewer Pool: I wonder if the ice will hold." },
+  { id: 'morepapers', img: 'images/cartoon-morepapers.jpg', caption: "I should have published more papers." },
+  { id: 'stealth', img: 'images/cartoon-stealth.jpg', caption: "I think this one is taking the stealth entry mode strategy too literally" }
+];
+</script>
+<footer class="wrap">
+  <p>Warwick Business School, University of Warwick, Coventry CV4 7AL. <a href="https://www.wbs.ac.uk/about/person/ammon-salter/">Profile at Warwick Business School</a>.</p>
+  <p>The Innovation and Entrepreneurship Playbook is on <a href="https://ieplaybook.substack.com/">Substack</a>. The games and their materials are released under CC BY-NC-SA 4.0. Board sound by <a href="https://freesound.org/s/174056/">matucha</a>, CC BY-NC 4.0.</p>
+</footer>
+<script src="sounds.js"></script>
+<script src="solari.js"></script>
+</body>
+</html>
