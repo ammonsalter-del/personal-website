@@ -30,7 +30,7 @@
   }
   function setSound(on) {
     soundOn = on;
-    if (on) { initAudio(); if (actx && actx.state === 'suspended') actx.resume(); }
+    if (on) { initAudio(); if (actx && actx.state === 'suspended') actx.resume(); setTimeout(function () { playFlap(0.9); }, 450); }
     try { sessionStorage.setItem('solari-sound', on ? '1' : '0'); } catch (e) {}
     document.querySelectorAll('[data-sound]').forEach(function (b) { b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.textContent = on ? 'Sound on' : 'Sound off'; });
   }

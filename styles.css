@@ -207,3 +207,10 @@ footer a { color: var(--ink-2); border-bottom-color: rgba(201,196,242,.35); }
 
 /* 9 Oct: long page titles (COLLABORATORS) overflowed a phone screen; scale the tiles down there */
 @media (max-width: 760px) { .solari.title .row { font-size: clamp(24px, 8vw, 44px); } }
+
+/* 9 Oct: the sound could only be switched on from the home page or the cartoon viewer, so the other five pages were silent */
+.soundrow { margin: 0 0 10px; }
+.soundrow button { font: 600 14px/1 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2);
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+.soundrow button:hover, .soundrow button:focus-visible { background: rgba(255,255,255,.11); color: #fff; }
+body:has(.controls) .soundrow { display: none; }   /* the home page and the cartoon viewer have their own */
