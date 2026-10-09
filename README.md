@@ -1,40 +1,48 @@
-# Ammon Salter: personal website
+# Personal academic website
 
-The source of [ammonsalter-del.github.io/personal-website](https://ammonsalter-del.github.io/personal-website/). Seven pages about my research, teaching, collaborators, career, the free simulation games I build, and the academic cartoons I draw badly.
+The source of [ammonsalter-del.github.io/personal-website](https://ammonsalter-del.github.io/personal-website/), the website of Ammon Salter, Professor of Technology and Innovation Management at Warwick Business School. It has seven pages: research, teaching, collaborators, career, the simulation games of the I&E Playbook, academic humour comics, and a home page.
 
-Plain HTML, one stylesheet, two scripts and a folder of pictures. No framework, no build step, no server code, no tracking. GitHub Pages serves the files as they are.
+GitHub Pages publishes the site from this repository, which is why the repository is public. Anyone who wants a site like it is welcome to fork it.
 
-## The site
+## What it is made of
 
-| Page | What is on it |
+Plain HTML and CSS with two small scripts. There is no framework and no build step. The only outside request is for two typefaces from Google Fonts. It comes to about 7 MB, nearly all of that pictures.
+
+| | |
 |---|---|
-| `index.html` | A split-flap board of papers and games, a short biography, and the Substack panel |
-| `research.html` | Recent articles, special issues, books, all 71 refereed articles with their DOIs, reports, current projects |
-| `teaching.html` | This year's courses at Warwick and earlier teaching |
-| `collaborators.html` | Co-authors by papers together, post-doctoral researchers, doctoral students, each line opening their page |
-| `cv.html` | Posts held, visiting roles, prizes, leadership, public and policy roles, reports, databases, impact cases, editorial work |
-| `games.html` | The I&E Playbook: The Disruptor, The Slingshot, Build, Bin, Boost, the educator's packs, the smaller games, how they are made, data and privacy |
-| `cartoons.html` | Twelve cartoons in a viewer |
-| `404.html` | Served for an address that does not exist |
+| `index.html` and six more pages | research, teaching, collaborators, career, the games, the comics |
+| `404.html` | for an address that does not exist |
+| `styles.css` | the palette, the per-page accent colour, the boards |
+| `solari.js` | the animation: a canvas picture board on the home page, and boards whose cells or lines turn through a few wrong values before they land |
+| `sounds.js`, `sounds/` | the board sound, eight short clips, fetched only if a reader turns it on |
+| `images/` | 51 pictures |
 
-## How it is built
+The design copies a railway departures board of the sort Solari made. The tabs are the departures strip, and page titles and lists turn over like the flaps.
 
-`styles.css` holds everything visual: the night palette as custom properties, a per-page accent colour switched by `html[data-strand]`, and the split-flap boards. `solari.js` does the animation: the picture board on the home page draws to a canvas, and the list boards turn each cell or line through a few wrong values before landing. Boards start when they come into view. `sounds.js` is the optional board sound, off until asked for.
+With JavaScript switched off, every board shows its final text. A reader whose system asks for reduced motion gets no animation. On a phone the tabs fall into two rows, the boards put each column on its own line, and the titles scale down. The body typeface is Atkinson Hyperlegible, which the Braille Institute designed for low-vision readers.
 
-Everything is relative, so the site works from any folder or domain without changes. It degrades sensibly: with JavaScript off, every board shows its final text, and with `prefers-reduced-motion` set, nothing animates. On a phone the tabs fall into two rows of three, the boards stack, and the page titles scale down.
+## Running it
+
+Clone the repository and open `index.html`, or serve the folder with `python3 -m http.server` or anything else static. Nothing needs installing. The paths are all relative, so it runs from any folder or domain.
+
+To publish a fork: Settings, Pages, deploy from a branch, `main`, folder `/ (root)`. The empty `.nojekyll` file stops GitHub running everything through Jekyll first. A custom domain needs a `CNAME` file holding the domain by itself, a DNS record pointing at GitHub, and Enforce HTTPS switched on once the certificate arrives. The canonical links, the `og:` tags and `sitemap.xml` all name the current address, so they need editing too.
 
 ## Changing it
 
-The pages are generated, not hand-edited, so an edit made here is lost at the next rebuild. The generator and the words document live outside this repository, with the working folder for the site. The words of every page sit in one Word document; it is edited, sent back, and the seven pages are rebuilt from it.
+Everything a reader sees is in the HTML, so a text editor will do.
 
-Pictures go in `images/` and are resized for the web before they are added.
+The pages are self-contained. Each has the header and tab strip, then its content, then the footer. To add one, copy a page, rename it, and edit the tab strip in all of them.
 
-## Publishing
+The palette sits in `:root` at the top of `styles.css`. `--accent` is set per page by `html[data-strand="..."]`, which gives each tab its own colour.
 
-Settings, Pages, deploy from a branch, `main`, folder `/ (root)`. A commit to `main` redeploys in a minute or two. `.nojekyll` stops GitHub from running the files through Jekyll.
+The home page ends with a `PICTURE_FRAMES` list, one entry per frame: an id, an image and a caption. Replace them with your own pictures, about 1200px wide, and the board handles the cropping.
 
-For a custom domain: add a `CNAME` file at the root holding the domain alone, point the domain at GitHub (an ALIAS or ANAME record to `ammonsalter-del.github.io`, or GitHub's four A records), then turn on Enforce HTTPS once the certificate is issued. The canonical links, the `og:url` and `og:image` tags, `sitemap.xml` and `robots.txt` all carry the current address and have to be rebuilt for the new one.
+A list board is a `div.solari` holding `div.row`s, each row a few `span`s. `data-cells` sets the column widths in characters and `data-href` turns a row into a link. The class `title` sets a board in letter tiles; without it each column turns as a line of text.
 
-## Credits and licence
+If you do not want the sound, delete `sounds.js`, the `sounds/` folder and the Sound button. Nothing else uses them.
 
-Written and built by Ammon Salter, Warwick Business School, with AI assistance. The text and the pictures of my own work are mine. The games and their materials are released under CC BY-NC-SA 4.0. The board sound is by [matucha](https://freesound.org/s/174056/), CC BY-NC 4.0. The two typefaces, Barlow Condensed and Atkinson Hyperlegible, come from Google Fonts; Atkinson Hyperlegible was designed for low-vision readers, which is why it sets the body text.
+My own pages are written out by a script that works from a Word document holding all the site's words, so anything I edit in the HTML is lost at the next rebuild. That script is not in this repository, and the problem does not arise in a fork.
+
+## Licence and credits
+
+Built by Ammon Salter with AI assistance. The code is free to reuse. The text, the comics and the pictures of my own work are not. The games and their materials are released under CC BY-NC-SA 4.0. The board sound is "pragotron_split-flap-display" by [matucha](https://freesound.org/s/174056/), CC BY-NC 4.0, cut into eight clips. The typefaces are Barlow Condensed and Atkinson Hyperlegible, both from Google Fonts.
