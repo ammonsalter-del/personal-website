@@ -1,8 +1,8 @@
 # Personal academic website
 
-The source of [ammonsalter-del.github.io/personal-website](https://ammonsalter-del.github.io/personal-website/), the website of Ammon Salter, Professor of Technology and Innovation Management at Warwick Business School. It has seven pages: research, teaching, collaborators, career, the simulation games of the I&E Playbook, academic humour comics, and a home page.
+The source of [ammonsalter.org](https://ammonsalter.org/), the website of Ammon Salter, Professor of Technology and Innovation Management at Warwick Business School. It has seven pages: research, teaching, collaborators, career, the simulation games of the I&E Playbook, academic humour comics, and a home page.
 
-GitHub Pages publishes the site from this repository, which is why the repository is public. Anyone who wants a site like it is welcome to fork it.
+GitHub Pages publishes the site from this repository, at ammonsalter.org through a custom domain, which is why the repository is public. Anyone who wants a site like it is welcome to fork it.
 
 ## What it is made of
 
@@ -25,7 +25,7 @@ With JavaScript switched off, every board shows its final text. A reader whose s
 
 Clone the repository and open `index.html`, or serve the folder with `python3 -m http.server` or anything else static. Nothing needs installing. The paths are all relative, so it runs from any folder or domain.
 
-To publish a fork: Settings, Pages, deploy from a branch, `main`, folder `/ (root)`. The empty `.nojekyll` file stops GitHub running everything through Jekyll first. A custom domain needs a `CNAME` file holding the domain by itself, a DNS record pointing at GitHub, and Enforce HTTPS switched on once the certificate arrives. The canonical links, the `og:` tags and `sitemap.xml` all name the current address, so they need editing too.
+To publish a fork: Settings, Pages, deploy from a branch, `main`, folder `/ (root)`. The empty `.nojekyll` file stops GitHub running everything through Jekyll first. A custom domain needs the four GitHub A records at the apex, a `www` CNAME to `<user>.github.io`, the domain typed into Settings, Pages, which writes the `CNAME` file, and Enforce HTTPS switched on once the certificate arrives. The canonical links, the `og:` tags and `sitemap.xml` all name the current address, so they need editing too.
 
 ## Changing it
 
